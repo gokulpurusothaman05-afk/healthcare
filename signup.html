@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Register a patient or clinical healthcare account on Stackly for AI diagnostic access.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+</head>
+<body>
+
+  <!-- SECTION 1: PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Setting Up Secure Identity...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- SECTION 2: COMMON HEADER NAVBAR -->
+  <div id="common-header"></div>
+
+  <!-- SECTION 3: SIGNUP HERO BANNER -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container text-center" style="text-align: center; max-width: 650px;" data-aos="fade-up">
+      <div class="section-badge"><i class="fa-solid fa-user-plus"></i> NEW REGISTRATION</div>
+      <h1 style="font-size: 2.8rem; margin-bottom: 16px;">
+        Create Your Stackly <span class="gradient-text">Account</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1rem;">
+        Get instant access to AI diagnostic tools, genomic liquid biopsy reports, and continuous vital tracking.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ROLE SELECTOR CARDS -->
+  <section class="section" style="padding: 10px 0;">
+    <div class="container" style="max-width: 700px;">
+      <div class="grid-2" style="margin-bottom: 30px;">
+        <div class="glass-card text-center" style="cursor: pointer; border-color: var(--primary-glow);" onclick="selectRole('patient')">
+          <i class="fa-solid fa-user-injured" style="font-size: 2.5rem; color: var(--primary-glow); margin-bottom: 10px;"></i>
+          <h4>Patient / Client</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">View personal diagnostic scans & vitals.</p>
+        </div>
+
+        <div class="glass-card text-center" style="cursor: pointer;" onclick="selectRole('doctor')">
+          <i class="fa-solid fa-user-md" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 10px;"></i>
+          <h4>Physician / Enterprise</h4>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Manage hospital scans & patient triage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: MULTI-STEP SIGNUP FORM -->
+  <section class="section" style="padding: 0 0 80px 0;">
+    <div class="container" style="max-width: 600px;">
+      <div class="glass-card" style="padding: 40px;" data-aos="zoom-in">
+        <form id="signupMainForm">
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" placeholder="Sarah" required>
+              <div class="error-msg">First name is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" placeholder="Connor" required>
+              <div class="error-msg">Last name is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="sarah@domain.com" required>
+            <div class="error-msg">Valid email address required.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">National Health ID / NPI (Optional)</label>
+            <input type="text" class="form-control" placeholder="HID-994820">
+          </div>
+
+          <!-- SECTION 6: PASSWORD METER -->
+          <div class="form-group">
+            <label class="form-label">Create Password</label>
+            <input type="password" id="signupPass" class="form-control" placeholder="At least 8 characters" required oninput="checkStrength(this.value)">
+            <div class="error-msg">Password must be at least 8 characters.</div>
+            <div style="height: 4px; width: 100%; background: #1e293b; border-radius: 2px; margin-top: 8px;">
+              <div id="strengthBar" style="height: 100%; width: 0%; background: #ef4444; transition: var(--transition-fast);"></div>
+            </div>
+            <span id="strengthText" style="font-size: 0.75rem; color: var(--text-dim);">Password strength: weak</span>
+          </div>
+
+          <!-- SECTION 7: HIPAA CONSENT -->
+          <div class="form-group">
+            <label style="font-size: 0.85rem; color: var(--text-muted); display: flex; gap: 8px; align-items: flex-start;">
+              <input type="checkbox" required style="margin-top: 4px;">
+              I agree to Stackly's <a href="404.html" style="color: var(--primary-glow);">Terms of Service</a> and consent to HIPAA compliant data processing.
+            </label>
+            <div class="error-msg">Consent is required to register.</div>
+          </div>
+
+          <!-- SECTION 8: SMS VERIFICATION CODE -->
+          <div class="form-group">
+            <label class="form-label">SMS Verification Code (Simulated: 123456)</label>
+            <input type="text" class="form-control" placeholder="Enter 6-digit code" required value="123456">
+            <div class="error-msg">Verification code required.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account & Enter Dashboard</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: ONBOARDING HELP CHATBOX -->
+  <section class="section" style="background: rgba(11, 17, 32, 0.4); padding: 30px 0;">
+    <div class="container text-center" style="text-align: center;">
+      <p style="font-size: 0.88rem; color: var(--text-muted);">
+        Already have an account? <a href="login.html" style="color: var(--primary-glow); font-weight: 600;">Log in here &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 10: COMMON FOOTER -->
+  <div id="common-footer"></div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function selectRole(role) {
+      alert('Selected Role: ' + role.toUpperCase());
+    }
+
+    function checkStrength(val) {
+      const bar = document.getElementById('strengthBar');
+      const txt = document.getElementById('strengthText');
+      if (val.length > 10) {
+        bar.style.width = '100%'; bar.style.background = '#22c55e';
+        txt.textContent = 'Password strength: Strong';
+      } else if (val.length >= 6) {
+        bar.style.width = '60%'; bar.style.background = '#eab308';
+        txt.textContent = 'Password strength: Moderate';
+      } else {
+        bar.style.width = '20%'; bar.style.background = '#ef4444';
+        txt.textContent = 'Password strength: Weak';
+      }
+    }
+
+    document.getElementById('signupMainForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Account Created Successfully!');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

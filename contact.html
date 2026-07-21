@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Contact Stackly for clinical pilots, enterprise deployments, technical support, or press inquiries.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+</head>
+<body>
+
+  <!-- SECTION 1: PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Connecting to Stackly Desk...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- SECTION 2: COMMON HEADER NAVBAR -->
+  <div id="common-header"></div>
+
+ 
+
+  <!-- SECTION 6: PRIMARY INQUIRY FORM -->
+  <section class="section">
+    <div class="container" style="max-width: 750px;" data-aos="fade-up">
+      <div class="glass-card" style="padding: 40px;">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <div class="section-badge"><i class="fa-solid fa-paper-plane"></i> MESSAGE US</div>
+          <h2>Send Message to Clinical Team</h2>
+          <p>We typically respond to hospital inquiries within 2 hours.</p>
+        </div>
+
+        <form id="contactMainForm">
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" placeholder="Jane" required>
+              <div class="error-msg">First name is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" placeholder="Smith" required>
+              <div class="error-msg">Last name is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Work / Institutional Email</label>
+            <input type="email" class="form-control" placeholder="jsmith@medical.org" required>
+            <div class="error-msg">Please enter a valid work email.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Contact Phone Number</label>
+            <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+            <div class="error-msg">Phone number is required.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Department / Inquiry Subject</label>
+            <select class="form-control" required>
+              <option value="">Select Department Focus</option>
+              <option value="radiology-pilot">Radiology Pilot Inquiry</option>
+              <option value="genomics-trial">Genomic Liquid Biopsy</option>
+              <option value="pricing-custom">Enterprise Custom Quote</option>
+              <option value="technical-support">PACS / EHR Integration Support</option>
+            </select>
+            <div class="error-msg">Please select an inquiry subject.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message Details</label>
+            <textarea class="form-control" rows="4" placeholder="How can Stackly assist your healthcare institution?" required></textarea>
+            <div class="error-msg">Please write your message.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Clinical Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- SECTION 11: COMMON FOOTER -->
+  <div id="common-footer"></div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

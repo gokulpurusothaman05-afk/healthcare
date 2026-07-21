@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Stackly empowers global healthcare with non-invasive AI cancer detection, high-throughput genomic sequencing, and predictive health analytics.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Vendor CSS (AOS) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <!-- Custom Style Sheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+</head>
+<body>
+
+  <!-- SECTION 1: PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Loading Stackly AI Diagnostics...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- SECTION 2: COMMON HEADER NAVBAR -->
+  <div id="common-header"></div>
+
+  <!-- SECTION 3: HERO SECTION (Inspired by Pinterest Design) -->
+  <section class="section hero-section" style="padding-top: 140px; padding-bottom: 90px; position: relative; z-index: 1;">
+    <div class="container grid-2" style="align-items: center;">
+      <div data-aos="fade-right">
+        <div class="section-badge">
+          <i class="fa-solid fa-sparkles"></i> OUR PURPOSE
+        </div>
+        <h1 style="font-size: 3.6rem; margin-bottom: 24px; line-height: 1.12; font-weight: 800;">
+          We Empower Your Health with <span class="gradient-text">AI/ML.</span>
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.15rem; margin-bottom: 36px; max-width: 540px;">
+          Accelerating non-invasive disease detection and clinical precision using multi-modal large health models and real-time biomarker analytics.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+          <a href="diagnostics.html" class="btn btn-primary" style="padding: 14px 32px;">
+            <span>Learn More</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="btn btn-secondary" style="padding: 14px 28px;">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Schedule Demo</span>
+          </a>
+        </div>
+
+        <!-- Quick Stats Pill Bar -->
+        <div style="display: flex; gap: 28px; border-top: 1px solid var(--glass-border); padding-top: 24px;">
+          <div>
+            <h4 class="gradient-text" style="font-size: 1.8rem; font-weight: 800;">500K+</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Health AI LLMs</p>
+          </div>
+          <div>
+            <h4 class="gradient-text" style="font-size: 1.8rem; font-weight: 800;">1.2M+</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Data Points</p>
+          </div>
+          <div>
+            <h4 class="gradient-text" style="font-size: 1.8rem; font-weight: 800;">78+</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">AI Models</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual (Full-bleed Translucent 3D Glass Ribbon & Connected Node Callouts) -->
+      <div data-aos="fade-left" style="position: relative;">
+        <div class="glass-card" style="padding: 24px; border-radius: 32px; border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(37, 99, 235, 0.25); background: rgba(10, 16, 32, 0.75);">
+          
+          <svg viewBox="0 0 650 450" fill="none" style="width: 100%; border-radius: 20px;">
+            <!-- Deep Ambient Grid -->
+            <rect width="650" height="450" fill="#060b18" rx="20"/>
+            
+            <!-- Dynamic Mesh Background Glows -->
+            <circle cx="200" cy="150" r="180" fill="url(#heroBlueGlow)" opacity="0.3"/>
+            <circle cx="450" cy="300" r="160" fill="url(#heroTealGlow)" opacity="0.25"/>
+
+            <!-- Smooth Dynamic Translucent Ribbon Path (Double Helix Structure) -->
+            <!-- Strand 1 (Outer Blue Ribbon) -->
+            <path d="M 50 220 Q 200 40, 325 220 T 600 220" stroke="url(#ribbonGradient1)" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.85" filter="url(#glowFilter)"/>
+            <path d="M 50 220 Q 200 40, 325 220 T 600 220" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+            <!-- Strand 2 (Inner Teal Ribbon Intersecting) -->
+            <path d="M 50 220 Q 200 400, 325 220 T 600 220" stroke="url(#ribbonGradient2)" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.8" filter="url(#glowFilter)"/>
+
+            <!-- Connecting Data Nodes & Lines (Directly matching Pinterest Callouts) -->
+            <!-- Node 1: 500K+ Health AI LLMs -->
+            <line x1="220" y1="110" x2="220" y2="160" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3 3"/>
+            <circle cx="220" cy="160" r="7" fill="#3b82f6"/>
+            <circle cx="220" cy="160" r="14" stroke="#3b82f6" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <g transform="translate(150, 60)">
+              <rect width="140" height="42" rx="21" fill="rgba(11, 19, 38, 0.92)" stroke="#2563eb" stroke-width="1.5"/>
+              <text x="70" y="20" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" font-family="sans-serif">500K+</text>
+              <text x="70" y="33" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="sans-serif">Health AI LLMs</text>
+            </g>
+
+            <!-- Node 2: 1.2M+ Data Points -->
+            <line x1="480" y1="180" x2="480" y2="230" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="3 3"/>
+            <circle cx="480" cy="180" r="7" fill="#2dd4bf"/>
+            <circle cx="480" cy="180" r="14" stroke="#2dd4bf" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <g transform="translate(410, 240)">
+              <rect width="140" height="42" rx="21" fill="rgba(11, 19, 38, 0.92)" stroke="#14b8a6" stroke-width="1.5"/>
+              <text x="70" y="20" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" font-family="sans-serif">1.2M+</text>
+              <text x="70" y="33" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="sans-serif">Data Points</text>
+            </g>
+
+            <!-- Node 3: 78+ AI Models -->
+            <line x1="330" y1="280" x2="330" y2="330" stroke="#a855f7" stroke-width="2" stroke-dasharray="3 3"/>
+            <circle cx="330" cy="280" r="7" fill="#a855f7"/>
+            <circle cx="330" cy="280" r="14" stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <g transform="translate(260, 340)">
+              <rect width="140" height="42" rx="21" fill="rgba(11, 19, 38, 0.92)" stroke="#8b5cf6" stroke-width="1.5"/>
+              <text x="70" y="20" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" font-family="sans-serif">78+</text>
+              <text x="70" y="33" fill="#94a3b8" font-size="9" text-anchor="middle" font-family="sans-serif">AI Models</text>
+            </g>
+
+            <!-- Gradient & Filter Definitions -->
+            <defs>
+              <linearGradient id="ribbonGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.9"/>
+                <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.8"/>
+              </linearGradient>
+
+              <linearGradient id="ribbonGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.85"/>
+                <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.8"/>
+              </linearGradient>
+
+              <radialGradient id="heroBlueGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2563eb" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              </radialGradient>
+
+              <radialGradient id="heroTealGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+              </radialGradient>
+
+              <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: LIVE METRICS COUNTER BANNER -->
+  <section class="section" style="padding: 40px 0;">
+    <div class="container">
+      <div class="grid-4" style="text-align: center;">
+        <div class="glass-card" style="padding: 28px;">
+          <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(56,189,248,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; border: 1px solid rgba(56,189,248,0.4);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="4" fill="#38bdf8"/></svg>
+          </div>
+          <h3 class="gradient-text" style="font-size: 2.2rem; font-weight: 800;">99.4%</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Diagnostic Accuracy</p>
+        </div>
+
+        <div class="glass-card" style="padding: 28px;">
+          <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(52,211,153,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; border: 1px solid rgba(52,211,153,0.4);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="gradient-text" style="font-size: 2.2rem; font-weight: 800;">4,200+</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Oncologists & Radiologists</p>
+        </div>
+
+        <div class="glass-card" style="padding: 28px;">
+          <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(192,132,252,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; border: 1px solid rgba(192,132,252,0.4);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="gradient-text-purple" style="font-size: 2.2rem; font-weight: 800;">1.8M+</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Patients Screened</p>
+        </div>
+
+        <div class="glass-card" style="padding: 28px;">
+          <div style="width: 52px; height: 52px; border-radius: 16px; background: rgba(129,140,248,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; border: 1px solid rgba(129,140,248,0.4);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="gradient-text" style="font-size: 2.2rem; font-weight: 800;">&lt; 3.2s</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">CT/MRI Analysis Speed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CORE AI CAPABILITIES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-section-box" data-aos="fade-up">
+        <div class="section-header">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+            <span>CAPABILITIES</span>
+          </div>
+          <h2>Next-Generation AI Clinical Suite</h2>
+          <p>Combining neural imaging networks, biomarker transformers, and predictive patient monitoring.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Card 1: Radiology SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(56,189,248,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(56,189,248,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="13" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2"/>
+                <path d="M10 16 C12 10, 20 10, 22 16 C20 22, 12 22, 10 16 Z" fill="rgba(56,189,248,0.3)" stroke="#38bdf8" stroke-width="2"/>
+                <circle cx="16" cy="16" r="3" fill="#ffffff"/>
+              </svg>
+            </div>
+            <h3>AI Neural Radiology</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">Automated 3D lung nodules and brain MRI segmentation with zero sub-millimeter noise.</p>
+            <a href="404.html" style="color: var(--primary-glow); font-weight: 700; font-size: 0.9rem;">Explore Radiology &rarr;</a>
+          </div>
+
+          <!-- Card 2: Genomics SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(52,211,153,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(52,211,153,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M8 8 C14 16, 18 16, 24 24" stroke="#34d399" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M24 8 C18 16, 14 16, 8 24" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="12" y1="12" x2="20" y2="12" stroke="#ffffff" stroke-width="2"/>
+                <line x1="12" y1="20" x2="20" y2="20" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Genomic Sequencing</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">High-throughput liquid biopsy analysis identifying somatic mutation variants in real time.</p>
+            <a href="404.html" style="color: var(--secondary); font-weight: 700; font-size: 0.9rem;">Explore Genomics &rarr;</a>
+          </div>
+
+          <!-- Card 3: Tele-ICU Pulse SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(192,132,252,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(192,132,252,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M4 16 H10 L13 8 L17 24 L20 12 L22 16 H28" stroke="#c084fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="16" r="3" fill="#c084fc"/>
+              </svg>
+            </div>
+            <h3>Predictive Tele-ICU</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">Real-time sepsis early-warning score (EWS) monitoring wearable patches and bedside units.</p>
+            <a href="404.html" style="color: var(--accent-purple); font-weight: 700; font-size: 0.9rem;">Explore Tele-ICU &rarr;</a>
+          </div>
+
+          <!-- Card 4: EHR NLP SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="400">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(129,140,248,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(129,140,248,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="6" y="4" width="20" height="24" rx="4" stroke="#818cf8" stroke-width="2.5" fill="rgba(129,140,248,0.1)"/>
+                <line x1="11" y1="10" x2="21" y2="10" stroke="#818cf8" stroke-width="2"/>
+                <line x1="11" y1="16" x2="18" y2="16" stroke="#818cf8" stroke-width="2"/>
+                <line x1="11" y1="22" x2="15" y2="22" stroke="#818cf8" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Automated EHR NLP</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">Clinical voice transcription turning doctor-patient dialogue into structured ICD-11 codes.</p>
+            <a href="404.html" style="color: var(--accent-indigo); font-weight: 700; font-size: 0.9rem;">Explore EHR &rarr;</a>
+          </div>
+
+          <!-- Card 5: Therapeutics Bio-Molecule SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="500">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(56,189,248,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(56,189,248,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="8" r="4" fill="#38bdf8"/>
+                <circle cx="8" cy="22" r="4" fill="#34d399"/>
+                <circle cx="24" cy="22" r="4" fill="#c084fc"/>
+                <line x1="16" y1="8" x2="8" y2="22" stroke="#ffffff" stroke-width="2"/>
+                <line x1="16" y1="8" x2="24" y2="22" stroke="#ffffff" stroke-width="2"/>
+                <line x1="8" y1="22" x2="24" y2="22" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Targeted Therapeutics</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">AI molecular docking predicting immunotherapy response rates tailored to individual genotypes.</p>
+            <a href="404.html" style="color: var(--primary-glow); font-weight: 700; font-size: 0.9rem;">Explore Therapeutics &rarr;</a>
+          </div>
+
+          <!-- Card 6: Pathology Tissue Scanner SVG -->
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="600">
+            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(52,211,153,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(52,211,153,0.4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="5" y="5" width="22" height="22" rx="4" stroke="#34d399" stroke-width="2"/>
+                <circle cx="16" cy="16" r="6" fill="rgba(52,211,153,0.3)" stroke="#34d399" stroke-width="2"/>
+                <line x1="5" y1="16" x2="27" y2="16" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="2 2"/>
+              </svg>
+            </div>
+            <h3>Pathology AI Screening</h3>
+            <p style="color: var(--text-muted); margin: 12px 0; font-size: 0.92rem;">Gigapixel whole-slide tissue imaging detecting micro-metastatic clusters in seconds.</p>
+            <a href="404.html" style="color: var(--secondary); font-weight: 700; font-size: 0.9rem;">Explore Pathology &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: NON-INVASIVE CANCER DETECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-section-box">
+        <div class="grid-2" style="align-items: center;">
+          <div data-aos="fade-right">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+              <span>REVOLUTIONARY TECH</span>
+            </div>
+            <h2>Non-Invasive Early Cancer Detection</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">
+              Stackly's proprietary nano-sensor surface mapping isolates circulating tumor cells (CTCs) with zero surgical intervention.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="glass-card" style="padding: 18px 24px; display: flex; align-items: center; gap: 18px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(56,189,248,0.2); color: #38bdf8; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; border: 1px solid rgba(56,189,248,0.4);">1</div>
+                <div>
+                  <h5 style="margin: 0; font-size: 1.05rem;">Sample Processing</h5>
+                  <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Microfluidic blood cell separation in &lt; 5 mins.</p>
+                </div>
+              </div>
+
+              <div class="glass-card" style="padding: 18px 24px; display: flex; align-items: center; gap: 18px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(52,211,153,0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; border: 1px solid rgba(52,211,153,0.4);">2</div>
+                <div>
+                  <h5 style="margin: 0; font-size: 1.05rem;">Nanoscale Cell Surface Mapping</h5>
+                  <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Atomic force microscopy scanning cell rigidity.</p>
+                </div>
+              </div>
+
+              <div class="glass-card" style="padding: 18px 24px; display: flex; align-items: center; gap: 18px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(192,132,252,0.2); color: #c084fc; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; border: 1px solid rgba(192,132,252,0.4);">3</div>
+                <div>
+                  <h5 style="margin: 0; font-size: 1.05rem;">Machine Learning Classification</h5>
+                  <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Deep neural network trained on 10M+ cell samples.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" style="text-align: center;">
+            <div class="glass-card" style="padding: 28px; border-color: rgba(52, 211, 153, 0.4);">
+              <svg viewBox="0 0 500 350" fill="none" style="width: 100%; border-radius: 16px;">
+                <rect width="500" height="350" fill="#060b18" rx="16"/>
+                <circle cx="250" cy="175" r="110" fill="url(#cellGlow)" opacity="0.35"/>
+                <circle cx="250" cy="175" r="75" stroke="#34d399" stroke-width="3.5" stroke-dasharray="8 4"/>
+                <circle cx="250" cy="175" r="45" fill="#2563eb"/>
+                <circle cx="210" cy="145" r="8" fill="#38bdf8"/>
+                <circle cx="285" cy="210" r="10" fill="#fb7185"/>
+                <circle cx="295" cy="135" r="6" fill="#c084fc"/>
+                <defs>
+                  <radialGradient id="cellGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 175) rotate(90) scale(110)">
+                    <stop stop-color="#34d399"/>
+                    <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+              </svg>
+              <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; font-size: 0.95rem;">Cell Surface Biophysical Profile</span>
+                <span class="badge badge-success" style="font-size: 0.85rem;">Match 99.8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: INTERACTIVE AI RISK CALCULATOR -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="padding: 40px;" data-aos="fade-up">
+        <div class="section-header" style="margin-bottom: 30px;">
+          <div class="section-badge"><i class="fa-solid fa-calculator"></i> INTERACTIVE TOOL</div>
+          <h2>Instant AI Diagnostic Risk Assessment</h2>
+          <p>Adjust clinical parameters below to compute real-time predictive risk metrics.</p>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+              <label class="form-label">Patient Age: <span id="ageVal" style="color:#3b82f6;">45</span> years</label>
+              <input type="range" id="calcAge" min="18" max="90" value="45" style="width: 100%; accent-color: var(--primary);" oninput="document.getElementById('ageVal').textContent = this.value">
+            </div>
+
+            <div>
+              <label class="form-label">Circulating Biomarker Elevation: <span id="bioVal" style="color:#14b8a6;">30</span> %</label>
+              <input type="range" id="calcBiomarker" min="0" max="100" value="30" style="width: 100%; accent-color: var(--secondary);" oninput="document.getElementById('bioVal').textContent = this.value">
+            </div>
+
+            <div>
+              <label class="form-label">Clinical Symptom Severity Score: <span id="symVal" style="color:#8b5cf6;">15</span> / 50</label>
+              <input type="range" id="calcSymptom" min="0" max="50" value="15" style="width: 100%; accent-color: var(--accent-purple);" oninput="document.getElementById('symVal').textContent = this.value">
+            </div>
+          </div>
+
+          <div style="text-align: center; background: rgba(6, 9, 19, 0.8); padding: 30px; border-radius: 20px; border: 1px solid var(--glass-border);">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Estimated AI Malignancy Probability</p>
+            <h2 id="calcScoreVal" class="gradient-text" style="font-size: 4rem; margin: 10px 0;">32.2%</h2>
+            <span id="calcRiskBadge" class="badge badge-warning" style="font-size: 0.9rem; padding: 6px 16px;">Moderate Biomarker Elevation</span>
+            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 16px;">
+              *Calculated using Stackly ML Model v4.8 trained on HIPAA compliant cohort data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: DIAGNOSTIC PROCESS TIMELINE -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-section-box" data-aos="fade-up">
+        <div class="section-header">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span>WORKFLOW</span>
+          </div>
+          <h2>How Stackly Diagnostic Engine Works</h2>
+          <p>From sample ingestion to actionable clinical recommendations in 4 simple steps.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #38bdf8); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; margin: 0 auto 16px auto; box-shadow: 0 0 20px rgba(56,189,248,0.4);">01</div>
+            <h4>Sample Ingestion</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">Upload DICOM imaging, genomic FASTQ files, or patient EHR records.</p>
+          </div>
+
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #34d399, #059669); color: #030611; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; margin: 0 auto 16px auto; box-shadow: 0 0 20px rgba(52,211,153,0.4);">02</div>
+            <h4>Neural Extraction</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">Multi-modal vision & transformer models extract 10,000+ latent clinical features.</p>
+          </div>
+
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #c084fc, #9333ea); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; margin: 0 auto 16px auto; box-shadow: 0 0 20px rgba(192,132,252,0.4);">03</div>
+            <h4>Biomarker Matching</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">Comparison against 500,000+ global validated oncology profiles.</p>
+          </div>
+
+          <div class="glass-card" data-aos="fade-up" data-aos-delay="400" style="text-align: center;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #818cf8, #4f46e5); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; margin: 0 auto 16px auto; box-shadow: 0 0 20px rgba(129,140,248,0.4);">04</div>
+            <h4>Doctor Verification</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">Structured report generated for board-certified physician sign-off.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: CLINICAL SHOWCASE VIDEO & INTERACTIVE DEMO -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="padding: 60px 40px; text-align: center; background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,41,59,0.7)); border-color: rgba(59,130,246,0.3);" data-aos="zoom-in">
+        <div class="section-badge"><i class="fa-solid fa-play"></i> LIVE DEMONSTRATION</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: 20px;">Experience the Stackly Clinical Portal</h2>
+        <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 30px auto;">
+          Watch how leading hospital systems reduce misdiagnosis rates by 40% using our real-time AI copilot.
+        </p>
+
+        <a href="404.html" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem;">
+          <i class="fa-solid fa-desktop"></i> Launch Interactive Portal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: DOCTOR & AI ADVISORY BOARD -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge"><i class="fa-solid fa-user-graduate"></i> MEDICAL BOARD</div>
+        <h2>Guided by World-Leading Clinical Researchers</h2>
+        <p>Our advisory council spans Johns Hopkins, Harvard Medical, and DeepMind Health alumni.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; background: #1e293b; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary-glow);">
+            <i class="fa-solid fa-user-doctor" style="font-size: 3rem; color: var(--primary-glow);"></i>
+          </div>
+          <h4>Dr. Elena Rostova, MD</h4>
+          <p style="color: var(--secondary); font-size: 0.85rem; font-weight: 600;">Chief Medical Officer</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 10px;">Former Head of Molecular Oncology at Johns Hopkins Medicine.</p>
+        </div>
+
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; background: #1e293b; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center; border: 2px solid var(--secondary);">
+            <i class="fa-solid fa-user-nurse" style="font-size: 3rem; color: var(--secondary);"></i>
+          </div>
+          <h4>Prof. Marcus Vance, PhD</h4>
+          <p style="color: var(--secondary); font-size: 0.85rem; font-weight: 600;">VP of AI Research</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 10px;">Author of 40+ publications on deep learning in genomic sequencing.</p>
+        </div>
+
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; background: #1e293b; margin: 0 auto 16px auto; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-purple);">
+            <i class="fa-solid fa-user-gear" style="font-size: 3rem; color: var(--accent-purple);"></i>
+          </div>
+          <h4>Dr. Sarah Chen, MD, PhD</h4>
+          <p style="color: var(--secondary); font-size: 0.85rem; font-weight: 600;">Director of Computational Biology</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 10px;">Specialist in single-cell transcriptomics & tumor micro-environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: PATIENT & HOSPITAL TESTIMONIALS -->
+  <section class="section" style="background: rgba(11, 17, 32, 0.5);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge"><i class="fa-solid fa-quote-left"></i> REVIEWS</div>
+        <h2>Trusted by Global Healthcare Leaders</h2>
+        <p>Discover how hospitals and clinical laboratories transform patient outcomes.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="glass-card" data-aos="fade-right">
+          <div style="color: #facc15; margin-bottom: 12px;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="font-style: italic; color: #e2e8f0; margin-bottom: 20px;">
+            "Stackly's AI radiology platform flagged early stage 1 lung adenocarcinoma in a routine CT scan that would have otherwise gone undetected for months. It saved our patient's life."
+          </p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold;">MH</div>
+            <div>
+              <h5 style="margin: 0;">Dr. Michael Hirsch</h5>
+              <p style="margin: 0; font-size: 0.78rem; color: var(--text-muted);">Director of Radiology, Berlin General Hospital</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card" data-aos="fade-left">
+          <div style="color: #facc15; margin-bottom: 12px;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="font-style: italic; color: #e2e8f0; margin-bottom: 20px;">
+            "Integrating Stackly's EHR NLP assistant reduced our clinical documentation backlog by 65%. Doctors now spend 2 additional hours per day directly with patients."
+          </p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #000;">AK</div>
+            <div>
+              <h5 style="margin: 0;">Dr. Amara Thorne</h5>
+              <p style="margin: 0; font-size: 0.78rem; color: var(--text-muted);">Chief Medical Information Officer, St. Jude Medical</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: FAQ ACCORDION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED</div>
+        <h2>Questions & Answers</h2>
+        <p>Everything you need to know about HIPAA compliance, model training, and integration.</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-glow);">Is Stackly HIPAA and GDPR compliant?</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Yes. Stackly operates on SOC2 Type II certified infrastructure with end-to-end 256-bit AES encryption. Patient data is de-identified at the edge before any model inferencing.
+          </p>
+        </div>
+
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-glow);">How long does hospital system integration take?</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Our HL7 / FHIR connectors allow zero-downtime deployment. Typical hospital IT integration takes less than 48 hours.
+          </p>
+        </div>
+
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-glow);">Does Stackly replace human physicians?</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            No. Stackly is designed as a clinical co-pilot to assist physicians by surfacing subtle patterns, reducing burnout, and expediting triage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13: HEALTH INSIGHTS NEWSLETTER FORM -->
+  <section class="section" style="background: rgba(37, 99, 235, 0.05);">
+    <div class="container" data-aos="fade-up">
+      <div class="glass-card" style="padding: 40px; text-align: center; max-width: 800px; margin: 0 auto;">
+        <i class="fa-solid fa-newspaper" style="font-size: 2.5rem; color: var(--primary-glow); margin-bottom: 16px;"></i>
+        <h2>Stay Ahead in AI Medicine</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">
+          Join 50,000+ medical professionals receiving monthly AI healthcare breakthroughs and whitepapers.
+        </p>
+        <form id="newsletterHomeForm" style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" class="form-control" placeholder="Enter clinical email" required style="flex: 1; min-width: 240px;">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 14: COMMON FOOTER -->
+  <div id="common-footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>

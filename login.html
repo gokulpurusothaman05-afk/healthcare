@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Secure single sign-on access point for Stackly patient portal and hospital admin dashboard.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+  <style>
+    .auth-tab-btn {
+      flex: 1;
+      padding: 14px;
+      border: 1px solid var(--glass-border);
+      background: rgba(15,23,42,0.6);
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: var(--transition-fast);
+    }
+    .auth-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary-glow);
+      box-shadow: 0 0 15px rgba(37,99,235,0.4);
+    }
+    .auth-card-panel {
+      display: none;
+    }
+    .auth-card-panel.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1: PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Authenticating Security Credentials...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- SECTION 2: COMMON HEADER NAVBAR -->
+  <div id="common-header"></div>
+
+  <!-- SECTION 3: AUTH SELECTION BANNER -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container text-center" style="text-align: center; max-width: 600px;" data-aos="fade-up">
+      <div class="section-badge"><i class="fa-solid fa-user-lock"></i> SECURE GATEWAY</div>
+      <h1 style="font-size: 2.8rem; margin-bottom: 16px;">
+        Stackly Portal <span class="gradient-text">Authentication</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 24px;">
+        Select your portal role below to access patient records or hospital administration tools.
+      </p>
+
+      <div style="display: flex; gap: 12px; margin-bottom: 30px;">
+        <button class="auth-tab-btn active" id="tabClient" onclick="switchAuthTab('client')">
+          <i class="fa-solid fa-user" style="margin-right: 8px;"></i> Client / Patient Portal
+        </button>
+        <button class="auth-tab-btn" id="tabAdmin" onclick="switchAuthTab('admin')">
+          <i class="fa-solid fa-user-shield" style="margin-right: 8px;"></i> Admin / Clinical Operations
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CLIENT PORTAL LOGIN CARD -->
+  <section class="section" style="padding: 0 0 80px 0;">
+    <div class="container" style="max-width: 500px;">
+      
+      <!-- CLIENT LOGIN FORM -->
+      <div class="glass-card auth-card-panel active" id="panelClient" data-aos="zoom-in">
+        <h3 style="margin-bottom: 6px; text-align: center;">Client & Patient Login</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-bottom: 24px;">
+          Access your personal vital trends, AI diagnostic reports, and doctor appointments.
+        </p>
+
+        <form id="clientLoginForm">
+          <div class="form-group">
+            <label class="form-label">Client / Patient Email</label>
+            <input type="email" id="clientEmail" class="form-control" placeholder="patient@health.com" required value="client@stackly.health">
+            <div class="error-msg">Valid email required.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="clientPass" class="form-control" placeholder="••••••••" required value="password123">
+            <div class="error-msg">Password required.</div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 0.85rem;">
+            <label style="color: var(--text-muted);"><input type="checkbox" checked> Remember Device</label>
+            <a href="404.html" style="color: var(--primary-glow);">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Login to Client Dashboard</span>
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- SECTION 5: ADMIN PORTAL LOGIN CARD -->
+      <div class="glass-card auth-card-panel" id="panelAdmin">
+        <h3 style="margin-bottom: 6px; text-align: center; color: var(--secondary);">Admin & Operations Login</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-bottom: 24px;">
+          Manage AI model GPU clusters, patient triage queue, and enterprise PACS nodes.
+        </p>
+
+        <form id="adminLoginForm">
+          <div class="form-group">
+            <label class="form-label">Admin Security ID</label>
+            <input type="text" id="adminId" class="form-control" placeholder="ADM-9042" required value="ADMIN-9042">
+            <div class="error-msg">Admin ID required.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Master Access Token</label>
+            <input type="password" id="adminPass" class="form-control" placeholder="••••••••" required value="admintoken2026">
+            <div class="error-msg">Security token required.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">2FA One-Time Passcode</label>
+            <input type="text" id="admin2fa" class="form-control" placeholder="123456" required value="884920">
+            <div class="error-msg">6-digit 2FA code required.</div>
+          </div>
+
+          <button type="submit" class="btn btn-outline-teal" style="width: 100%;">
+            <span>Login to Admin Console</span>
+            <i class="fa-solid fa-shield-halved"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <!-- SECTION 10: COMMON FOOTER -->
+  <div id="common-footer"></div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function switchAuthTab(type) {
+      const btnClient = document.getElementById('tabClient');
+      const btnAdmin = document.getElementById('tabAdmin');
+      const panelClient = document.getElementById('panelClient');
+      const panelAdmin = document.getElementById('panelAdmin');
+
+      if (type === 'client') {
+        btnClient.classList.add('active');
+        btnAdmin.classList.remove('active');
+        panelClient.classList.add('active');
+        panelAdmin.classList.remove('active');
+      } else {
+        btnAdmin.classList.add('active');
+        btnClient.classList.remove('active');
+        panelAdmin.classList.add('active');
+        panelClient.classList.remove('active');
+      }
+    }
+
+    // Direct Login Handlers to Dashboards
+    document.getElementById('clientLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = 'dashboard-client.html';
+    });
+
+    document.getElementById('adminLoginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = 'dashboard-admin.html';
+    });
+
+    function quickLoginClient() {
+      switchAuthTab('client');
+      setTimeout(() => { window.location.href = 'dashboard-client.html'; }, 300);
+    }
+
+    function quickLoginAdmin() {
+      switchAuthTab('admin');
+      setTimeout(() => { window.location.href = 'dashboard-admin.html'; }, 300);
+    }
+  </script>
+</body>
+</html>

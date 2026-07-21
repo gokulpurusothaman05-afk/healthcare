@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Loading Admin System Console...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <div class="dashboard-wrapper">
+
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly Logo" class="brand-logo-img">
+          <span>STACK<span class="gradient-text">LY</span></span>
+        </a>
+      </div>
+
+      <nav class="sidebar-menu">
+        <div class="sidebar-label">ADMIN CONSOLE</div>
+        <a href="#admin-sec-overview" class="sidebar-item active" data-section="admin-sec-overview">
+          <i class="fa-solid fa-gauge-high"></i> System Overview
+        </a>
+        <a href="#admin-sec-models" class="sidebar-item" data-section="admin-sec-models">
+          <i class="fa-solid fa-brain"></i> AI Models Latency
+        </a>
+        <a href="#admin-sec-triage" class="sidebar-item" data-section="admin-sec-triage">
+          <i class="fa-solid fa-list-check"></i> Diagnostic Triage
+        </a>
+        <a href="#admin-sec-patients" class="sidebar-item" data-section="admin-sec-patients">
+          <i class="fa-solid fa-users"></i> Patient Database
+        </a>
+        <a href="#admin-sec-fleet" class="sidebar-item" data-section="admin-sec-fleet">
+          <i class="fa-solid fa-server"></i> Hospital GPU Fleet
+        </a>
+        <a href="#admin-sec-training" class="sidebar-item" data-section="admin-sec-training">
+          <i class="fa-solid fa-dna"></i> Training Pipelines
+        </a>
+        <a href="#admin-sec-audit" class="sidebar-item" data-section="admin-sec-audit">
+          <i class="fa-solid fa-shield-cat"></i> Audit Security Logs
+        </a>
+        <a href="#admin-sec-flags" class="sidebar-item" data-section="admin-sec-flags">
+          <i class="fa-solid fa-sliders"></i> System Config Flags
+        </a>
+        <a href="#admin-sec-alert" class="sidebar-item" data-section="admin-sec-alert">
+          <i class="fa-solid fa-triangle-exclamation"></i> Emergency Alert
+        </a>
+        <a href="#admin-sec-backup" class="sidebar-item" data-section="admin-sec-backup">
+          <i class="fa-solid fa-database"></i> Backup & Restore
+        </a>
+        <hr style="border-color: var(--glass-border); margin: 10px 0;">
+        <a href="login.html" class="sidebar-item" style="color: #f87171;">
+          <i class="fa-solid fa-right-from-bracket"></i> Exit Admin Mode
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar" style="background: linear-gradient(135deg, var(--secondary), var(--accent-purple)); color: #000;">AD</div>
+          <div class="user-info">
+            <h5 style="color: var(--secondary);">Admin Administrator</h5>
+            <p>Role: Superuser (Level 5)</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN WORKSPACE -->
+    <main class="dashboard-main">
+      
+      <!-- TOP HEADER BAR -->
+      <div class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="btn btn-secondary mobile-toggle" id="dashSidebarToggle" style="display: none; padding: 8px 14px;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dashboard-title">
+            <h2>Admin Clinical Operations Hub</h2>
+            <p>Global GPU cluster metrics, AI model latency, and hospital node management</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="status-indicator" style="background: rgba(37,99,235,0.15); border-color: rgba(59,130,246,0.3); color: #38bdf8;">
+            <div class="status-dot" style="background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></div>
+            <span>All 78 Models Online</span>
+          </div>
+          <a href="404.html" class="btn btn-primary" style="padding: 10px 16px; font-size: 0.85rem;">
+            <i class="fa-solid fa-arrows-rotate"></i> Sync Nodes
+          </a>
+        </div>
+      </div>
+
+      <!-- SECTION 1: SYSTEM OVERVIEW & KPIS -->
+      <section id="admin-sec-overview" class="dash-section active">
+        <div class="grid-4" style="margin-bottom: 30px;">
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Total Screened Patients</span>
+              <div class="stat-val">1,849,200</div>
+              <span class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> +14.2% this month</span>
+            </div>
+            <div class="stat-icon"><i class="fa-solid fa-hospital-user"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Active AI Models</span>
+              <div class="stat-val">78 / 78</div>
+              <span class="stat-change up"><i class="fa-solid fa-check"></i> 100% Uptime</span>
+            </div>
+            <div class="stat-icon" style="color: var(--secondary); background: rgba(20,184,166,0.15);"><i class="fa-solid fa-brain"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Mean GPU Latency</span>
+              <div class="stat-val">14.2 <span style="font-size: 1rem; color: var(--text-dim);">ms</span></div>
+              <span class="stat-change up"><i class="fa-solid fa-bolt"></i> Ultra Fast</span>
+            </div>
+            <div class="stat-icon" style="color: var(--accent-purple); background: rgba(139,92,246,0.15);"><i class="fa-solid fa-microchip"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Model Precision Rate</span>
+              <div class="stat-val">99.4%</div>
+              <span class="stat-change up"><i class="fa-solid fa-award"></i> Verified AUC</span>
+            </div>
+            <div class="stat-icon" style="color: var(--accent-cyan); background: rgba(6,182,212,0.15);"><i class="fa-solid fa-bullseye"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: AI MODEL LATENCY & GPU WORKLOAD CHARTS -->
+      <section id="admin-sec-models" class="dash-section">
+        <div class="grid-2" style="margin-bottom: 30px;">
+          <div class="glass-card">
+            <h4 style="margin-bottom: 16px;">Model Inference Latency (24 Hour Log)</h4>
+            <canvas id="adminModelLatencyChart" height="160"></canvas>
+          </div>
+
+          <div class="glass-card">
+            <h4 style="margin-bottom: 16px;">GPU Cluster Workload Allocation</h4>
+            <canvas id="adminGpuChart" height="160"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: DIAGNOSTIC TRIAGE QUEUE -->
+      <section id="admin-sec-triage" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Pending Diagnostic Approval Triage</h3>
+          <div class="data-table-container" style="margin-top: 16px;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Scan ID</th>
+                  <th>Modality</th>
+                  <th>Hospital Node</th>
+                  <th>AI Risk Index</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#DICOM-9920</td>
+                  <td>Chest CT 3D</td>
+                  <td>Berlin General</td>
+                  <td><span class="badge badge-danger">94.8% Malignancy</span></td>
+                  <td>
+                    <a href="404.html" class="btn btn-primary" style="padding: 4px 12px; font-size: 0.75rem;">Escalate to Oncologist</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#GENOMIC-401</td>
+                  <td>cfDNA Biopsy</td>
+                  <td>Johns Hopkins</td>
+                  <td><span class="badge badge-success">Clear (0.01%)</span></td>
+                  <td>
+                    <a href="404.html" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.75rem;">Approve Report</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: PATIENT DATABASE TABLE -->
+      <section id="admin-sec-patients" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Registered Patients & Clinical Accounts</h3>
+          <div class="data-table-container" style="margin-top: 16px;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>ID</th>
+                  <th>Primary Facility</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sarah Rivera</td>
+                  <td>PAT-8802</td>
+                  <td>St. Jude Medical</td>
+                  <td><span class="badge badge-success">Active Sync</span></td>
+                </tr>
+                <tr>
+                  <td>Michael Chang</td>
+                  <td>PAT-9014</td>
+                  <td>NY Presbyterian</td>
+                  <td><span class="badge badge-info">Monitoring</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: HOSPITAL FLEET NODES -->
+      <section id="admin-sec-fleet" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Hospital Edge Node Status</h3>
+          <div class="grid-3" style="margin-top: 16px;">
+            <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px;">
+              <h5 style="color: var(--primary-glow);">US-East Cluster (NY)</h5>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">124 Hospital Nodes • 0ms Lag</p>
+            </div>
+            <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px;">
+              <h5 style="color: var(--secondary);">EU-Central Cluster (Berlin)</h5>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">86 Hospital Nodes • 2ms Lag</p>
+            </div>
+            <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px;">
+              <h5 style="color: var(--accent-purple);">AP-East Cluster (Tokyo)</h5>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">62 Hospital Nodes • 4ms Lag</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: TRAINING PIPELINES -->
+      <section id="admin-sec-training" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Active Epoch Training Runs (NVIDIA H100 Cluster)</h3>
+          <div style="background: #060913; padding: 16px; border-radius: 10px; font-family: monospace; font-size: 0.85rem; color: #4ade80;">
+            [EPOCH 400/500] — Training Multi-Modal Vision Model v4.9<br>
+            Loss: 0.00142 | Validation Accuracy: 99.6% | ETA: 45 Mins
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: AUDIT SECURITY LOGS -->
+      <section id="admin-sec-audit" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Real-Time Security Audit Stream</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-family: monospace; font-size: 0.8rem;">
+            <div style="color: var(--text-muted);">[16:54:02] HIPAA Gateway: PHI de-identified for DICOM-9920 successfully.</div>
+            <div style="color: var(--text-muted);">[16:52:10] TLS 1.3 Handshake: Node #BERLIN-104 re-authenticated.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: CONFIGURATION FLAGS FORM -->
+      <section id="admin-sec-flags" class="dash-section">
+        <div class="glass-card" style="max-width: 600px;">
+          <h3>Global System Feature Flags</h3>
+          <form id="dashAdminFlagsForm">
+            <div class="form-group" style="margin-top: 16px;">
+              <label style="display: flex; gap: 10px; align-items: center;">
+                <input type="checkbox" checked> Auto-Escalate &gt; 90% Malignancy Risk Scans
+              </label>
+            </div>
+            <div class="form-group">
+              <label style="display: flex; gap: 10px; align-items: center;">
+                <input type="checkbox" checked> Enable High-Throughput Genomic Liquid Biopsy
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Flag Settings</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 9: EMERGENCY ALERT PANEL -->
+      <section id="admin-sec-alert" class="dash-section">
+        <div class="glass-card" style="background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.4);">
+          <h3 style="color: #f87171;"><i class="fa-solid fa-bullhorn"></i> Broadcast Emergency System Alert</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin: 10px 0;">Send urgent notification to all connected hospital PACS gateways.</p>
+          <a href="404.html" class="btn btn-primary" style="background: #ef4444; border: none;">Broadcast Alert</a>
+        </div>
+      </section>
+
+      <!-- SECTION 10: BACKUP & RESTORE -->
+      <section id="admin-sec-backup" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Database Backup & Recovery Controls</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">Last automated backup: 15 minutes ago (2.4 TB compressed).</p>
+          <a href="404.html" class="btn btn-secondary">Trigger Full Snapshot</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

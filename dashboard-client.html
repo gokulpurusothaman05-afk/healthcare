@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Opening Patient Portal...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <div class="dashboard-wrapper">
+
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/images/logo.webp" alt="Stackly Logo" class="brand-logo-img">
+          <span>STACK<span class="gradient-text">LY</span></span>
+        </a>
+      </div>
+
+      <nav class="sidebar-menu">
+        <div class="sidebar-label">PATIENT MENU</div>
+        <a href="#sec-overview" class="sidebar-item active" data-section="sec-overview">
+          <i class="fa-solid fa-chart-pie"></i> Health Overview
+        </a>
+        <a href="#sec-reports" class="sidebar-item" data-section="sec-reports">
+          <i class="fa-solid fa-file-medical"></i> Diagnostic Scans
+        </a>
+        <a href="#sec-vitals" class="sidebar-item" data-section="sec-vitals">
+          <i class="fa-solid fa-heart-pulse"></i> Vital Charts
+        </a>
+        <a href="#sec-appointments" class="sidebar-item" data-section="sec-appointments">
+          <i class="fa-solid fa-calendar-check"></i> Appointments
+        </a>
+        <a href="#sec-symptom" class="sidebar-item" data-section="sec-symptom">
+          <i class="fa-solid fa-robot"></i> AI Symptom Bot
+        </a>
+        <a href="#sec-prescriptions" class="sidebar-item" data-section="sec-prescriptions">
+          <i class="fa-solid fa-pills"></i> Medications
+        </a>
+        <a href="#sec-labs" class="sidebar-item" data-section="sec-labs">
+          <i class="fa-solid fa-flask-vial"></i> Lab Tests
+        </a>
+        <a href="#sec-wearables" class="sidebar-item" data-section="sec-wearables">
+          <i class="fa-solid fa-watch-fitness"></i> Wearables Sync
+        </a>
+        <a href="#sec-billing" class="sidebar-item" data-section="sec-billing">
+          <i class="fa-solid fa-file-invoice-dollar"></i> Insurance Claims
+        </a>
+        <a href="#sec-settings" class="sidebar-item" data-section="sec-settings">
+          <i class="fa-solid fa-gear"></i> Account Settings
+        </a>
+        <hr style="border-color: var(--glass-border); margin: 10px 0;">
+        <a href="login.html" class="sidebar-item" style="color: #f87171;">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout Portal
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-badge">
+          <div class="avatar">SR</div>
+          <div class="user-info">
+            <h5>Sarah Rivera</h5>
+            <p>Patient ID: #PAT-8802</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN PANEL WORKSPACE -->
+    <main class="dashboard-main">
+      
+      <!-- TOP HEADER BAR -->
+      <div class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="btn btn-secondary mobile-toggle" id="dashSidebarToggle" style="display: none; padding: 8px 14px;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dashboard-title">
+            <h2>Client Patient Dashboard</h2>
+            <p>Real-time vital tracking and AI diagnostic report synchronization</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Wearables Connected</span>
+          </div>
+          <a href="404.html" class="btn btn-secondary" style="padding: 10px 16px;">
+            <i class="fa-solid fa-bell"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- SECTION 1: OVERVIEW & VITALS SUMMARY -->
+      <section id="sec-overview" class="dash-section active">
+        <div class="grid-4" style="margin-bottom: 30px;">
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Heart Rate</span>
+              <div class="stat-val">72 <span style="font-size: 1rem; color: var(--text-dim);">BPM</span></div>
+              <span class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> Normal Rhythm</span>
+            </div>
+            <div class="stat-icon"><i class="fa-solid fa-heartbeat"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Blood Oxygen</span>
+              <div class="stat-val">98%</div>
+              <span class="stat-change up"><i class="fa-solid fa-check"></i> Optimal SpO2</span>
+            </div>
+            <div class="stat-icon" style="color: var(--secondary); background: rgba(20,184,166,0.15);"><i class="fa-solid fa-lungs"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Blood Pressure</span>
+              <div class="stat-val">118/78</div>
+              <span class="stat-change up"><i class="fa-solid fa-check"></i> Stage 0 Normal</span>
+            </div>
+            <div class="stat-icon" style="color: var(--accent-purple); background: rgba(139,92,246,0.15);"><i class="fa-solid fa-gauge-high"></i></div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">AI Health Risk Score</span>
+              <div class="stat-val">1.2%</div>
+              <span class="stat-change up"><i class="fa-solid fa-shield"></i> Low Malignancy Index</span>
+            </div>
+            <div class="stat-icon" style="color: var(--accent-cyan); background: rgba(6,182,212,0.15);"><i class="fa-solid fa-shield-virus"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: AI DIAGNOSTIC REPORTS & SCANS -->
+      <section id="sec-reports" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3 style="margin-bottom: 16px;"><i class="fa-solid fa-x-ray" style="color: var(--primary-glow); margin-right: 10px;"></i> Latest 3D Lung CT Scan Diagnostic</h3>
+          <div class="grid-2" style="align-items: center;">
+            <div style="background: #050814; padding: 20px; border-radius: 12px; text-align: center;">
+              <svg viewBox="0 0 300 180" fill="none" style="width: 100%;">
+                <rect width="300" height="180" fill="#091122" rx="8"/>
+                <ellipse cx="150" cy="90" rx="90" ry="60" stroke="#3b82f6" stroke-width="2" fill="rgba(37,99,235,0.05)"/>
+                <circle cx="180" cy="80" r="8" fill="#22c55e"/>
+                <text x="180" y="105" fill="#22c55e" font-size="9" text-anchor="middle">No Nodule (Clear)</text>
+              </svg>
+            </div>
+            <div>
+              <span class="badge badge-success" style="margin-bottom: 10px;">AI Analysis Complete</span>
+              <h4>Summary: Unremarkable CT Chest</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem; margin: 10px 0;">No active focal consolidations or pleural effusions detected by Stackly Model v4.8.</p>
+              <a href="404.html" class="btn btn-primary" style="font-size: 0.85rem;"><i class="fa-solid fa-file-pdf"></i> Download Official Radiology PDF</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: VITAL TRENDS LINE CHART -->
+      <section id="sec-vitals" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3 style="margin-bottom: 20px;">7-Day Continuous Telemetry Trends</h3>
+          <canvas id="clientVitalsChart" height="120"></canvas>
+        </div>
+      </section>
+
+      <!-- SECTION 4: APPOINTMENTS & CONSULTATIONS -->
+      <section id="sec-appointments" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3 style="margin-bottom: 16px;">Upcoming Clinical Consultations</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(15,23,42,0.8); padding: 14px 20px; border-radius: 12px;">
+              <div>
+                <strong style="color: #fff;">Dr. Elena Rostova — Oncology Follow-up</strong>
+                <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">Tomorrow at 10:00 AM EST • Virtual Telehealth</p>
+              </div>
+              <a href="404.html" class="btn btn-secondary" style="font-size: 0.8rem;">Join Telehealth</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: AI SYMPTOM CHECKER BOT -->
+      <section id="sec-symptom" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3><i class="fa-solid fa-robot" style="color: var(--secondary); margin-right: 8px;"></i> Stackly AI Symptom Checker</h3>
+          <div style="background: #060913; padding: 16px; border-radius: 12px; margin: 16px 0; min-height: 120px;">
+            <div style="color: #38bdf8; font-size: 0.88rem; margin-bottom: 8px;"><strong>Stackly Bot:</strong> "Hello Sarah! How are you feeling today? You can log any symptoms or vitals here."</div>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" class="form-control" placeholder="Describe how you are feeling..." style="flex:1;">
+            <a href="404.html" class="btn btn-primary">Send</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: PRESCRIPTIONS & MEDICATIONS -->
+      <section id="sec-prescriptions" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Active Prescriptions</h3>
+          <div class="data-table-container" style="margin-top: 16px;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Dosage</th>
+                  <th>Frequency</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vitamin D3 Complex</td>
+                  <td>50,000 IU</td>
+                  <td>Once Weekly</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Atorvastatin</td>
+                  <td>10 mg</td>
+                  <td>Daily at Bedtime</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: LAB TESTS DATA TABLE -->
+      <section id="sec-labs" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Recent Blood & Biomarker Lab Tests</h3>
+          <div class="data-table-container" style="margin-top: 16px;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Date</th>
+                  <th>Result</th>
+                  <th>Reference Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Circulating cfDNA Biopsy</td>
+                  <td>July 18, 2026</td>
+                  <td><span style="color: #4ade80;">Negative (Clear)</span></td>
+                  <td>&lt; 0.01% Variant Frequency</td>
+                </tr>
+                <tr>
+                  <td>Complete Blood Count (CBC)</td>
+                  <td>July 10, 2026</td>
+                  <td>Normal</td>
+                  <td>WBC 6.5 x10^3 / uL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: CONNECTED WEARABLES -->
+      <section id="sec-wearables" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Connected Health Sensors</h3>
+          <div class="grid-2" style="margin-top: 16px;">
+            <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong>Apple Watch Series 9</strong>
+                <p style="margin:0; font-size: 0.78rem; color: var(--text-muted);">Synced 2 mins ago</p>
+              </div>
+              <span class="badge badge-success">Connected</span>
+            </div>
+
+            <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong>Continuous Glucose Monitor (CGM)</strong>
+                <p style="margin:0; font-size: 0.78rem; color: var(--text-muted);">Synced Live</p>
+              </div>
+              <span class="badge badge-success">Connected</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: BILLING & INSURANCE CLAIMS -->
+      <section id="sec-billing" class="dash-section">
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <h3>Insurance & Claims Status</h3>
+          <div style="background: rgba(15,23,42,0.8); padding: 16px; border-radius: 12px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong>BlueCross Health Platinum</strong>
+              <p style="margin:0; font-size: 0.8rem; color: var(--text-muted);">Claim #CLM-9042 • AI Radiology Coverage 100%</p>
+            </div>
+            <span class="badge badge-success">Approved ($0 Patient Responsibility)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 10: ACCOUNT & SECURITY SETTINGS FORM -->
+      <section id="sec-settings" class="dash-section">
+        <div class="glass-card" style="max-width: 600px;">
+          <h3 style="margin-bottom: 20px;">Patient Profile Settings</h3>
+          <form id="dashClientSettingsForm">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" value="Sarah Rivera" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Emergency Phone Contact</label>
+              <input type="tel" class="form-control" value="+1 (555) 911-8840" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Profile Settings</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Join Stackly to build non-invasive AI diagnostics, genomic models, and precision medicine infrastructure. View open roles.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/preloader.css">
+</head>
+<body>
+
+  <!-- SECTION 1: PRELOADER -->
+  <div id="preloader">
+    <div class="loader-glow">
+      <div class="loader-circle"></div>
+      <div class="loader-brand">S</div>
+    </div>
+    <div class="loader-text">Loading Stackly Careers...</div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MOVING BACKGROUND IMAGE LAYER & ATMOSPHERIC GLOW ORBS -->
+  <div class="bg-moving-image-layer"></div>
+  <div class="bg-ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- SECTION 2: COMMON HEADER NAVBAR -->
+  <div id="common-header"></div>
+
+  <!-- SECTION 3: CAREERS HERO -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 60px;">
+    <div class="container text-center" style="text-align: center; max-width: 850px;" data-aos="fade-up">
+      <div class="section-badge"><i class="fa-solid fa-briefcase"></i> JOIN OUR TEAM</div>
+      <h1 style="font-size: 3.4rem; margin-bottom: 20px;">
+        Shape the Future of <span class="gradient-text">AI Healthcare</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; margin-bottom: 30px;">
+        We are hiring machine learning engineers, computational biologists, and oncologists committed to saving lives through code and clinical science.
+      </p>
+      <a href="#open-roles" class="btn btn-primary">View Open Positions &darr;</a>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CULTURE & BENEFITS GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge"><i class="fa-solid fa-heart"></i> PERKS & CULTURE</div>
+        <h2>Why Build at Stackly?</h2>
+        <p>Comprehensive support for your health, growth, and clinical innovation.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-laptop-code" style="font-size: 2.2rem; color: var(--primary-glow); margin-bottom: 16px;"></i>
+          <h4>Remote & Hybrid Flexibility</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Work from anywhere in the world or join our hubs in New York, London, and Berlin.</p>
+        </div>
+
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-shield-heart" style="font-size: 2.2rem; color: var(--secondary); margin-bottom: 16px;"></i>
+          <h4>100% Premium Healthcare Coverage</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Comprehensive medical, dental, vision, and mental health stipends for you & family.</p>
+        </div>
+
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-microchip" style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 16px;"></i>
+          <h4>Unlimited GPU Compute Grant</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">Access top-tier NVIDIA H100/B200 GPU clusters for medical model experimentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: OPEN POSITIONS FILTERABLE LIST -->
+  <section class="section" id="open-roles" style="background: rgba(11, 17, 32, 0.4);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge"><i class="fa-solid fa-list-check"></i> CAREER OPPORTUNITIES</div>
+        <h2>Current Open Roles</h2>
+        <p>Explore opportunities across our engineering and clinical research divisions.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 900px; margin: 0 auto;">
+        <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h4>Staff Machine Learning Engineer — Medical Vision (3D DICOM)</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Engineering | New York / Remote | Full-Time</p>
+          </div>
+          <a href="#applyForm" class="btn btn-primary" style="font-size: 0.85rem;">Apply Now</a>
+        </div>
+
+        <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h4>Senior Computational Biologist — Somatic Variant Calling</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Research | London / Remote | Full-Time</p>
+          </div>
+          <a href="#applyForm" class="btn btn-primary" style="font-size: 0.85rem;">Apply Now</a>
+        </div>
+
+        <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h4>Clinical AI Integration Specialist (HL7 / FHIR)</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Solutions | Berlin / Hybrid | Full-Time</p>
+          </div>
+          <a href="#applyForm" class="btn btn-primary" style="font-size: 0.85rem;">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ROLE QUICK APPLICATION DRAWER OVERVIEW -->
+  <section class="section">
+    <div class="container text-center" style="text-align: center;">
+      <h3 style="margin-bottom: 12px;">Hiring Process Timeline</h3>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Transparent 4-step interview process from submission to offer.</p>
+      <div class="grid-4">
+        <div class="glass-card">
+          <h4 style="color: var(--primary-glow);">1. Initial Screening</h4>
+          <p style="color: var(--text-muted); font-size: 0.82rem;">30-min conversation with our talent partner.</p>
+        </div>
+        <div class="glass-card">
+          <h4 style="color: var(--secondary);">2. Technical Deep Dive</h4>
+          <p style="color: var(--text-muted); font-size: 0.82rem;">Code walkthrough or bio-informatic case study.</p>
+        </div>
+        <div class="glass-card">
+          <h4 style="color: var(--accent-purple);">3. Clinical Panel</h4>
+          <p style="color: var(--text-muted); font-size: 0.82rem;">Meet the Chief Medical Officer and engineering team.</p>
+        </div>
+        <div class="glass-card">
+          <h4 style="color: var(--accent-cyan);">4. Offer & Onboarding</h4>
+          <p style="color: var(--text-muted); font-size: 0.82rem;">Competitive equity package & gear selection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: LIFE AT STACKLY GALLERY -->
+  <section class="section" style="background: rgba(11, 17, 32, 0.4);">
+    <div class="container text-center" style="text-align: center;" data-aos="fade-up">
+      <div class="section-badge"><i class="fa-solid fa-users"></i> LIFE AT STACKLY</div>
+      <h2>Engineers & Doctors Working Together</h2>
+      <div class="grid-3" style="margin-top: 30px;">
+        <div class="glass-card" style="padding: 20px;">
+          <i class="fa-solid fa-graduation-cap" style="font-size: 3rem; color: var(--primary-glow); margin-bottom: 12px;"></i>
+          <h4>Annual Health AI Summit</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Gathering team members annually in Switzerland for scientific hackathons.</p>
+        </div>
+        <div class="glass-card" style="padding: 20px;">
+          <i class="fa-solid fa-code-branch" style="font-size: 3rem; color: var(--secondary); margin-bottom: 12px;"></i>
+          <h4>Open Source Publications</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Publishing non-proprietary diagnostic benchmarks for the scientific community.</p>
+        </div>
+        <div class="glass-card" style="padding: 20px;">
+          <i class="fa-solid fa-hand-holding-heart" style="font-size: 3rem; color: var(--accent-purple); margin-bottom: 12px;"></i>
+          <h4>Medical Volunteer Time Off</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Paid time off for medical professionals to serve in global health missions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: DIVERSITY & ETHICS CODE -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="padding: 30px;">
+        <h3 style="color: var(--primary-glow); margin-bottom: 12px;"><i class="fa-solid fa-scale-balanced" style="margin-right: 10px;"></i> AI Ethics & Inclusivity Code</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Stackly is committed to training healthcare AI models on diverse global demographic datasets to eliminate racial, gender, and socio-economic algorithmic bias.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: FELLOWSHIP PROGRAM -->
+  <section class="section" style="background: rgba(11, 17, 32, 0.4);">
+    <div class="container text-center" style="text-align: center;">
+      <div class="section-badge"><i class="fa-solid fa-user-graduate"></i> ACADEMIC FELLOWSHIPS</div>
+      <h2>Medical Student & Postdoc AI Grants</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        We offer 6-month research residencies for MD-PhD candidates developing novel diagnostic models.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 10: APPLICATION FORM -->
+  <section class="section" id="applyForm">
+    <div class="container" style="max-width: 700px;" data-aos="fade-up">
+      <div class="glass-card" style="padding: 40px;">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <div class="section-badge"><i class="fa-solid fa-paper-plane"></i> APPLY TODAY</div>
+          <h2>Submit Application</h2>
+          <p>Fill in your details to apply for an open role or general candidacy.</p>
+        </div>
+
+        <form id="careersApplyForm">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Alex Rivera" required>
+            <div class="error-msg">Please enter your full name.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="alex@domain.com" required>
+            <div class="error-msg">Please enter a valid email.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Target Role / Department</label>
+            <select class="form-control" required>
+              <option value="">Select Department</option>
+              <option value="ml-engineering">ML Engineering</option>
+              <option value="bioinformatics">Bioinformatics & Genomics</option>
+              <option value="clinical-trials">Clinical Operations</option>
+              <option value="product">Product & UX</option>
+            </select>
+            <div class="error-msg">Please select a department.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">LinkedIn / GitHub Profile URL</label>
+            <input type="url" class="form-control" placeholder="https://linkedin.com/in/username" required>
+            <div class="error-msg">Please provide a profile link.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Cover Note / Why Stackly?</label>
+            <textarea class="form-control" rows="3" placeholder="Tell us about your research or engineering experience..." required></textarea>
+            <div class="error-msg">Please enter a brief cover note.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Candidate Application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: APPLICANT FAQ ACCORDION -->
+  <section class="section" style="background: rgba(11, 17, 32, 0.4);">
+    <div class="container text-center" style="max-width: 800px; text-align: center;">
+      <h3 style="margin-bottom: 20px;">Applicant FAQs</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
+        <div class="glass-card" style="padding: 16px 20px;">
+          <strong style="color: var(--primary-glow);">Do I need a medical background for engineering roles?</strong>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">No. Our clinical directors collaborate side-by-side with engineers to translate medical concepts.</p>
+        </div>
+        <div class="glass-card" style="padding: 16px 20px;">
+          <strong style="color: var(--primary-glow);">Does Stackly sponsor visa relocations?</strong>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Yes. We sponsor O-1, H-1B, and European EU Blue Cards for qualified researchers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: COMMON FOOTER -->
+  <div id="common-footer"></div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
